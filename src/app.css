@@ -1,0 +1,45 @@
+@import 'tailwindcss';
+
+@config "../tailwind.config.js";
+
+@layer base {
+  html {
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgb(2 6 23); /* slate-950 */
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgb(2 6 23); /* slate-950 */
+    color: rgb(241 245 249); /* slate-100 */
+    font-family:
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      'Segoe UI',
+      Roboto,
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    touch-action: manipulation;
+  }
+
+  #app {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+  }
+}
+
+@layer components {
+  .btn-tactile {
+    @apply min-h-[48px] min-w-[48px] px-4 py-3 rounded-lg font-semibold transition-all;
+    @apply active:scale-95;
+    touch-action: manipulation;
+  }
+}
