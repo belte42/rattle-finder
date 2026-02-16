@@ -174,6 +174,29 @@
 <main
   class="flex h-full min-h-screen flex-col overflow-hidden bg-slate-950 p-4 text-slate-100 overflow-y-auto"
 >
+  <!-- Header -->
+  <header class="flex justify-between items-center mb-3">
+    <div class="text-left">
+      <h1 class="text-3xl font-bold text-slate-100">Rattle Finder</h1>
+      <p class="mt-2 text-sm text-slate-400">
+        Easiest way to find rattles in your vehicle
+      </p>
+    </div>
+    <div class="flex justify-self-end">
+      <a
+        href="https://www.buymeacoffee.com/rattle.finder"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+          alt="Buy Me A Coffee"
+          class="bmc-button-img"
+        />
+      </a>
+    </div>
+  </header>
+
   <!-- Mode toggle -->
   <div class="mb-4 flex rounded-lg border border-slate-700 bg-slate-900 p-1">
     <button
@@ -229,6 +252,20 @@
       onSelectRattle={selectRattle}
       {ensureStarted}
       {kill}
+      onOpenRattleTest={() => setRattleTestMode(true)}
     />
   {/if}
 </main>
+
+<style>
+  .bmc-button-img {
+    height: 40px !important;
+    width: 145px !important;
+  }
+  @media (max-width: 400px) {
+    .bmc-button-img {
+      height: 30px !important;
+      width: 109px !important;
+    }
+  }
+</style>

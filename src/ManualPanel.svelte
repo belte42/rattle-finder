@@ -26,6 +26,7 @@
     onSelectRattle?: (r: RattleRecord) => void
     ensureStarted?: () => Promise<boolean>
     kill?: () => void
+    onOpenRattleTest?: () => void
   }
 
   let {
@@ -41,6 +42,7 @@
     onSelectRattle,
     ensureStarted,
     kill,
+    onOpenRattleTest,
   }: Props = $props()
 
   function panLabel() {
@@ -132,11 +134,21 @@
 <div class="mb-6">
   <p class="mb-2 text-sm text-slate-500">Saved rattles</p>
   {#if rattleRecords.length === 0}
-    <p
-      class="rounded-xl border border-slate-700 bg-slate-800/50 px-4 py-3 text-center text-sm text-slate-500"
-    >
-      Run a rattle test and tap “Rattle!” to save frequencies here.
-    </p>
+    {#if onOpenRattleTest}
+      <button
+        type="button"
+        class="btn-tactile w-full rounded-xl border-2 border-slate-600 bg-slate-800 px-4 py-3 text-center text-sm text-slate-200 hover:border-slate-500 hover:bg-slate-700"
+        onclick={onOpenRattleTest}
+      >
+        Rattle Test
+      </button>
+    {:else}
+      <p
+        class="rounded-xl border border-slate-700 bg-slate-800/50 px-4 py-3 text-center text-sm text-slate-500"
+      >
+        Run a rattle test and tap “Rattle!” to save frequencies here.
+      </p>
+    {/if}
   {:else}
     <div class="grid grid-cols-2 gap-3">
       {#each rattleRecords as r}

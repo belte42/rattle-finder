@@ -53,44 +53,9 @@
 </script>
 
 <div class="flex flex-1 flex-col overflow-auto">
-  <!-- Range selection -->
-  <div class="mb-4 flex gap-4">
-    <div class="flex-1">
-      <label class="mb-1 block text-xs text-slate-500">From (Hz)</label>
-      <input
-        type="number"
-        min={MIN_RANGE}
-        max={MAX_RANGE}
-        bind:value={rangeMin}
-        class="w-full rounded-lg border border-slate-600 bg-slate-800 px-3 py-2 text-slate-100"
-      />
-    </div>
-    <div class="flex-1">
-      <label class="mb-1 block text-xs text-slate-500">To (Hz)</label>
-      <input
-        type="number"
-        min={MIN_RANGE}
-        max={MAX_RANGE}
-        bind:value={rangeMax}
-        class="w-full rounded-lg border border-slate-600 bg-slate-800 px-3 py-2 text-slate-100"
-      />
-    </div>
-  </div>
 
-  <!-- Sweep speed -->
-  <div class="mb-4">
-    <label class="mb-1 block text-xs text-slate-500"
-      >Sweep speed: {sweepSpeed} Hz/sec</label
-    >
-    <input
-      type="range"
-      min={MIN_SWEEP_SPEED}
-      max={MAX_SWEEP_SPEED}
-      step="0.5"
-      bind:value={sweepSpeed}
-      class="w-full cursor-pointer accent-slate-400"
-    />
-  </div>
+
+  
 
   <!-- Current frequency display -->
   <div class="mb-4 flex flex-col items-center gap-1">
@@ -100,6 +65,43 @@
     </p>
   </div>
 
+    <!-- Range selection -->
+    <div class="mb-4 flex gap-4">
+      <div class="flex-1">
+        <label class="mb-1 block text-xs text-slate-500">From (Hz)</label>
+        <input
+          type="number"
+          min={MIN_RANGE}
+          max={MAX_RANGE}
+          bind:value={rangeMin}
+          class="w-full rounded-lg border border-slate-600 bg-slate-800 px-3 py-2 text-slate-100"
+        />
+      </div>
+      <div class="flex-1">
+        <label class="mb-1 block text-xs text-slate-500">To (Hz)</label>
+        <input
+          type="number"
+          min={MIN_RANGE}
+          max={MAX_RANGE}
+          bind:value={rangeMax}
+          class="w-full rounded-lg border border-slate-600 bg-slate-800 px-3 py-2 text-slate-100"
+        />
+      </div>
+    </div>
+<!-- Sweep speed -->
+<div>
+  <label class="mb-1 block text-xs text-slate-500"
+    >Sweep speed: {sweepSpeed} Hz/sec</label
+  >
+  <input
+    type="range"
+    min={MIN_SWEEP_SPEED}
+    max={MAX_SWEEP_SPEED}
+    step="0.5"
+    bind:value={sweepSpeed}
+    class="w-full cursor-pointer accent-slate-400"
+  />
+</div>
   <!-- Sweep controls -->
   <div class="mb-4 flex gap-3">
     <!-- <button
